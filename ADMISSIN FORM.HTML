@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("IMG_0809.JPG") no-repeat center/cover;
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 500px;
+            background: rgb(247, 243, 5);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            text-align: left;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background: purple;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0be60b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Secondary School Admission Form</h2>
+        <nav>
+            <ul>
+                <li><a href="EPSSS.HTML">Go to EPSSS Page</a></li>
+            </ul>
+        </nav>
+        <form action="submit_form.php" method="post">
+            <label for="name">Student's Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="address">Home Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+
+            <label for="parent_name">Parent/Guardian Name:</label>
+            <input type="text" id="parent_name" name="parent_name" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="previous_school">Previous School:</label>
+            <input type="text" id="previous_school" name="previous_school">
+
+            <label for="grade">Grade/Class Applying For:</label>
+            <input type="text" id="grade" name="grade" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

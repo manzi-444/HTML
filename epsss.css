@@ -1,0 +1,22 @@
+
+BODY
+
+ .form-container {
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end; /* Aligns to the CENTRE */
+}
+
+.form-container {
+    background: rgba(39, 204, 6, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30px;
+    text-align: center;
+    margin-top: 20px;
+}

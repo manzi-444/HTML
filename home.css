@@ -1,0 +1,116 @@
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ body {
+	font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightgreen; /* Changed to light green */
+    width: 100%;
+    height: 100vh; /* Makes the body fit the screen */
+    display: flex;
+    flex-direction: column; /* Ensures content stacks properly */
+}
+
+
+}
+
+header {
+	background-color: #050204;
+	color: #63af1b;
+	padding: 1em;
+	text-align: center;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+section {
+	padding: 2em;
+}
+
+h1 {
+	font-size: 36px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	text-align: center;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #80f035;
+}
+
+footer {
+	background-color: #040504;
+	color: #4eec1a;
+	padding: 1em;
+	text-align: center;
+	clear: both;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center Alignment with CSS</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        .center-block {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .center-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="center">Center-Aligned Heading</h1>
+    <p class="center">This is a center-aligned paragraph using text-align property.</p>
+
+    <img src="your-image.jpg" alt="Centered Image" class="center-block" />
+
+    <div class="center-flex">
+        <p>Centered using flexbox</p>
+    </div>
+</body>
+</html>
