@@ -3,112 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entertainment and Sports Website</title>
-    <link rel="stylesheet" href="entertainment.css">
-    <style>footer{
-        background-color: aqua;
-    }
-        /* Make videos responsive */
-        video {
-            max-width: 100%;
-            height: auto;
-        }
-        /* Style for links */
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        /* General page styling */
+    <title>School Analytics Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            border-bottom: 4px solid #0056b3;
         }
         section {
-            padding: 20px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            color: rgb(240, 243, 240);
+        h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
         }
-
-        button {
-            background-color: darkgreen;
-            color: white;
-            padding: 10px 20px;
+        form input, form button {
+            padding: 12px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
             font-size: 16px;
+        }
+        form input {
+            background-color: #f4f4f4;
+        }
+        form button {
+            background: #007bff;
+            color: white;
             border: none;
             cursor: pointer;
+            transition: background 0.3s;
         }
-
-        button:hover {
-            background-color: green;
+        form button:hover {
+            background: #0056b3;
         }
-
-        /* Navigation Styling */
-        nav ul {
-            list-style-type: none;
-            padding: 0;
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
         }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-size: 16px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        canvas {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .btn-container button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-container button:hover {
+            background-color: #218838;
+        }
+        .table-container {
+            margin-top: 30px;
+        }
+        .table-container table {
+            border-radius: 8px;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header Section -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="EPSSS.HTML">ENTERTAINMENT AND SPORTS</a></li>
-            </ul>
-        </nav>
+        <h1>School Analytics Dashboard</h1>
     </header>
-    
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1><marquee>Latest Entertainment News</marquee></h1>
-        <p>Get the latest updates on movies, music, and celebrities.</p>
-        <button>Read More</button>
-    </section>
-    
-    <!-- PROM PARTIES Section -->
-    <section id="prom-parties">
-        <h2>PROM PARTIES Reviews</h2>
-        <ul>
-            <li>
-                <!-- Video -->
-                <video controls>
-                    <source src="Download.mp4" type="video/mp4">
-                </video>
-                <h2>School Campaigns</h2>
-                <video controls>
-                    <source src="Download(1).mp4" type="video/mp4">
 
-            </li>
-        </ul>
+    <section id="student-form">
+        <h2>Add Student</h2>
+        <form id="add-student-form">
+            <input type="text" id="name" placeholder="Student Name" required>
+            <input type="text" id="class_level" placeholder="Class Level" required>
+            <input type="text" id="exam_scores" placeholder="Exam Scores (comma-separated)" required>
+            <button type="submit">Add Student</button>
+        </form>
     </section>
 
-    <!-- Sports Website Section -->
-    <section id="sports">
-        <header>
-            <h1>SPORTS IN SCHOOL</h1>
-            
-                <ul>
-                    <li><a href="FOOTBALL.HTML">Football</a></li>
-                    <li><a href="NETBALL.HTML">NETBALL</a></li>
-                    <li><a href="RUGBY.HTML">RUGBY</a></li>
-                </ul>
-            </DIV>
-        </header>
+    <section id="students-list" class="table-container">
+        <h2>Students</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Class Level</th>
+                    <th>Exam Scores</th>
+                </tr>
+            </thead>
+            <tbody id="students-table-body">
+                <!-- Student data will be inserted here -->
+            </tbody>
+        </table>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Entertainment Website</p>
-    </footer>
+    <section id="performance-chart">
+        <h2>Student Performance Chart</h2>
+        <canvas id="studentChart"></canvas>
+    </section>
 
+    <div class="btn-container">
+        <button onclick="loadStudents()">Refresh Data</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("add-student-form");
+            const tableBody = document.getElementById("students-table-body");
+            let chart;
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const name = document.getElementById("name").value;
+                const classLevel = document.getElementById("class_level").value;
+                const examScores = document.getElementById("exam_scores").value.split(",").map(Number);
+
+                const studentData = { name, class_level: classLevel, exam_scores: examScores };
+                
+                try {
+                    const response = await fetch("http://localhost:5000/students", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(studentData)
+                    });
+                    if (response.ok) {
+                        loadStudents();
+                        form.reset();
+                    }
+                } catch (error) {
+                    console.error("Error adding student:", error);
+                }
+            });
+
+            async function loadStudents() {
+                try {
+                    const response = await fetch("http://localhost:5000/students");
+                    const students = await response.json();
+                    tableBody.innerHTML = "";
+                    let labels = [];
+                    let averages = [];
+                    students.forEach(student => {
+                        const avgScore = JSON.parse(student.exam_scores).reduce((a, b) => a + b, 0) / JSON.parse(student.exam_scores).length;
+                        labels.push(student.name);
+                        averages.push(avgScore);
+                        const row = `<tr>
+                            <td>${student.name}</td>
+                            <td>${student.class_level}</td>
+                            <td>${JSON.parse(student.exam_scores).join(", ")}</td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                    updateChart(labels, averages);
+                } catch (error) {
+                    console.error("Error loading students:", error);
+                }
+            }
+
+            function updateChart(labels, averages) {
+                const ctx = document.getElementById('studentChart').getContext('2d');
+                if (chart) chart.destroy();
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Average Score',
+                            data: averages,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            loadStudents();
+        });
+    </script>
 </body>
 </html>
