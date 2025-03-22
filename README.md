@@ -1,2 +1,2 @@
-education for life
+entebbe parents
 
